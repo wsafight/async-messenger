@@ -1,3 +1,8 @@
-export default function () {
-  return 'hello world';
-}
+export type {
+  GlobalReqOptions,
+  RequestOptions as ReqOptions,
+  BaseReqData,
+  BaseResData,
+} from './type';
+
+export { BaseAsyncMessager } from './base-async-messager';
