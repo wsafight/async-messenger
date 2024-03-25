@@ -1,0 +1,61 @@
+{
+  "name": "tool-library-template",
+  "version": "0.0.4",
+  "jsnext:source": "./src/index.ts",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/lib/index.js",
+  "module": "./dist/es/index.js",
+  "scripts": {
+    "prepare": "modern build && husky install",
+    "dev": "modern dev",
+    "build": "modern build",
+    "build:watch": "modern build -w",
+    "reset": "rimraf ./**/node_modules",
+    "lint": "modern lint",
+    "change": "modern change",
+    "bump": "modern bump",
+    "pre": "modern pre",
+    "change-status": "modern change-status",
+    "gen-release-note": "modern gen-release-note",
+    "release": "modern release",
+    "new": "modern new",
+    "upgrade": "modern upgrade",
+    "test": "modern test",
+    "np": "np"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ],
+    "*.{js,jsx,mjs,mjsx,cjs,cjsx}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/"
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "@modern-js/module-tools": "2.48.3",
+    "@modern-js/eslint-config": "2.48.3",
+    "@modern-js/tsconfig": "2.48.3",
+    "@modern-js-app/eslint-config": "2.48.3",
+    "rimraf": "5.0.5",
+    "lint-staged": "15.2.2",
+    "prettier": "3.2.5",
+    "husky": "9.0.11",
+    "typescript": "5.4.3",
+    "@types/jest": "29.5.12",
+    "@types/node": "20.11.30",
+    "@types/react": "18.2.69",
+    "@modern-js/plugin-testing": "2.48.3",
+    "np": "10.0.2"
+  },
+  "sideEffects": [],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
